@@ -1,0 +1,73 @@
+/* ==========================================================================
+   PainRelief Clinic - Custom Styles & Theme Overrides
+   Primary Palette: #6E473B (Warm Mocha/Chestnut) & #A78D78 (Warm Sand Taupe)
+   ========================================================================== */
+
+:root {
+  --color-primary: #6E473B;
+  --color-primary-hover: #57372D;
+  --color-secondary: #A78D78;
+  --color-accent: #8A5E4F;
+  --color-cream: #FAF6F0;
+  --color-sand: #F3ECE3;
+  --color-espresso-dark: #311D17;
+}
+
+/* Prevent horizontal scroll and right-edge white/dark gaps */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: #A78D78;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #A78D78;
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A78D78;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6E473B;
+}
+
+/* Smooth Focus Rings */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #6E473B !important;
+  box-shadow: 0 0 0 3px rgba(110, 71, 59, 0.15) !important;
+}
+
+.dark input:focus, .dark textarea:focus, .dark select:focus {
+  border-color: #A78D78 !important;
+  box-shadow: 0 0 0 3px rgba(167, 141, 120, 0.25) !important;
+}

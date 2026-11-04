@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Care — PainRelief | Your Journey With Us</title>
+  <meta name="description" content="Learn about the patient care experience at PainRelief, from your first appointment through recovery. We prioritize comfort, communication, and comprehensive support.">
+  
+  <!-- Favicon matching logo (Heart Pulse) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236E473B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/><path d='M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27'/></svg>">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FAF6F0',
+              100: '#F3ECE3',
+              200: '#E2D5C7',
+              300: '#C6B29F',
+              400: '#A78D78',
+              500: '#8A5E4F',
+              600: '#6E473B',
+              700: '#57372D',
+              800: '#432921',
+              900: '#311D17',
+              950: '#1F120E',
+            },
+            teal: {
+              50: '#FAF6F0',
+              100: '#F3ECE3',
+              200: '#E2D5C7',
+              300: '#C6B29F',
+              400: '#A78D78',
+              500: '#8A5E4F',
+              600: '#6E473B',
+              700: '#57372D',
+              800: '#432921',
+              900: '#311D17',
+              950: '#1F120E',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Prevent Theme & RTL Flash -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('painrelief_theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const dir = localStorage.getItem('painrelief_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', dir);
+    })();
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-200 overflow-x-hidden w-full max-w-full">
+
+  <!-- ========== NAVBAR (Unchanged) ========== -->
+  <header class="sticky top-0 z-50 bg-white dark:bg-[#0f172a] border-b border-slate-100 dark:border-slate-800 shadow-sm w-full">
+    <div class="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Area -->
+        <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse flex-shrink-0">
+          <div class="w-10 h-10 rounded-[12px] bg-[#6E473B] flex items-center justify-center text-white shadow-sm">
+            <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[22px] font-bold tracking-tight text-slate-900 dark:text-white">Pain<span class="text-[#6E473B] dark:text-[#A78D78]">Relief</span><span class="text-[#6E473B] dark:text-[#A78D78] ml-0.5">•</span></span>
+        </a>
+
+        <!-- Center Navigation Links -->
+        <nav id="desktop-nav" class="hidden 2xl:flex items-center space-x-5 2xl:space-x-7 rtl:space-x-reverse text-[14px] 2xl:text-[15px] font-semibold text-slate-700 dark:text-slate-200">
+          
+          <!-- Home Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3.5 py-2 rounded-xl hover:text-teal-600 dark:hover:text-teal-400 transition">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 rounded-xl bg-white dark:bg-slate-800 shadow-lg border border-slate-100 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <a href="index.html" class="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 first:rounded-t-xl">Home 1</a>
+              <a href="home-2.html" class="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 last:rounded-b-xl">Home 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">About Us</a>
+          <a href="treatments.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Treatments</a>
+          <a href="pain-relief.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Pain Relief</a>
+          <a href="doctors.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Our Doctors</a>
+          <a href="conditions.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Conditions</a>
+          <a href="patient-care.html" class="whitespace-nowrap px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 transition">Patient Care</a>
+          <a href="recovery.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Recovery</a>
+          <a href="contact.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Contact</a>
+          
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="hidden 2xl:flex items-center space-x-3 rtl:space-x-reverse">
+          
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" title="Toggle RTL" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-teal-400 dark:hover:bg-slate-800 transition">
+            <i data-lucide="arrow-left-right" class="w-[18px] h-[18px]"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-teal-400 dark:hover:bg-slate-800 transition">
+            <i data-lucide="moon" class="w-[18px] h-[18px] hidden dark:block"></i>
+            <i data-lucide="sun" class="w-[18px] h-[18px] block dark:hidden"></i>
+          </button>
+
+          <!-- Book Appointment Button -->
+          <a href="contact.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse px-5 py-2.5 rounded-[12px] bg-[#6E473B] hover:bg-[#57372D] text-white text-[15px] font-semibold shadow-sm transition">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" type="button" class="2xl:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Toggle navigation menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-menu" class="hidden 2xl:hidden pb-6 border-t border-slate-100 dark:border-slate-800 mt-2 pt-4">
+                        <nav class="flex flex-col space-y-1.5 text-base font-semibold">
+          <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Home 1</a>
+          <a href="home-2.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Home 2</a>
+          <a href="about.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">About Us</a>
+          <a href="treatments.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Treatments</a>
+          <a href="pain-relief.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Pain Relief</a>
+          <a href="doctors.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Our Doctors</a>
+          <a href="conditions.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Conditions</a>
+          <a href="patient-care.html" class="px-4 py-2.5 rounded-xl bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300">Patient Care</a>
+          <a href="recovery.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Recovery</a>
+          <a href="contact.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Contact</a>
+        </nav>
+        
+        <div class="mt-5 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-5 px-4">
+          <div class="flex space-x-3">
+            <button id="mobile-rtl-toggle" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 bg-slate-100 dark:bg-slate-800"><i data-lucide="arrow-left-right" class="w-5 h-5"></i></button>
+            <button id="mobile-theme-toggle" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 bg-slate-100 dark:bg-slate-800">
+              <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+              <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+          </div>
+          <a href="contact.html" class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#6E473B] text-white text-sm font-semibold shadow-sm">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT (Patient Care - Expanded Text) ========== -->
+
+  <!-- 1. Page Header / Hero -->
+  <section class="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
+    <img src="assets/pc1.avif" alt="Nurse assisting a patient" class="absolute inset-0 w-full h-full object-cover opacity-20">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-teal-400 font-bold uppercase tracking-wider text-sm mb-4 block">The Patient Experience</span>
+      <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-6">Care That Centers<br>Around You.</h1>
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        We understand that navigating medical care can be overwhelming, especially when you are already dealing with the burden of chronic pain. Our dedicated patient care team is here to ensure your journey is smooth, transparent, and as comfortable as possible. From your initial phone call to your final follow-up, we prioritize communication and compassion above all else.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. What to Expect (The Patient Journey) -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Step by Step</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          What to Expect on Your First Visit
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          From the moment you walk through our doors, our team is dedicated to making your experience as comfortable and informative as possible. We believe in complete transparency, so you know exactly what is happening at every stage of your appointment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+        
+        <div class="text-center p-3 sm:p-5 flex flex-col items-center h-full">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-6 text-2xl sm:text-3xl font-extrabold shadow-sm shrink-0">01</div>
+          <div class="min-h-[3.5rem] flex flex-col justify-start items-center mb-3">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Warm Welcome</h3>
+          </div>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+            Check in with our friendly front desk staff who will guide you through any remaining paperwork and answer initial questions. If you prefer, you can complete most of your intake forms online before you arrive to save time.
+          </p>
+        </div>
+
+        <div class="text-center p-3 sm:p-5 flex flex-col items-center h-full">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-6 text-2xl sm:text-3xl font-extrabold shadow-sm shrink-0">02</div>
+          <div class="min-h-[3.5rem] flex flex-col justify-start items-center mb-3">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Clinical Assessment</h3>
+          </div>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+            A registered nurse will check your vitals, review your medical history, and ensure you are comfortable before seeing the doctor. This is also a great time to ask any logistical questions about your upcoming treatment or insurance coverage.
+          </p>
+        </div>
+
+        <div class="text-center p-3 sm:p-5 flex flex-col items-center h-full">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-6 text-2xl sm:text-3xl font-extrabold shadow-sm shrink-0">03</div>
+          <div class="min-h-[3.5rem] flex flex-col justify-start items-center mb-3">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Physician Consultation</h3>
+          </div>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+            An in-depth, unhurried conversation with your pain specialist. We listen carefully to your story, review any prior imaging, and perform a focused physical and neurological exam to identify the exact source of your discomfort.
+          </p>
+        </div>
+
+        <div class="text-center p-3 sm:p-5 flex flex-col items-center h-full">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-6 text-2xl sm:text-3xl font-extrabold shadow-sm shrink-0">04</div>
+          <div class="min-h-[3.5rem] flex flex-col justify-start items-center mb-3">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Clear Action Plan</h3>
+          </div>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+            Before you leave, we ensure you fully understand your diagnosis, treatment options, and next steps. We provide printed educational materials, schedule any follow-up procedures, and send a summary directly to your primary care physician.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Pre & Post Procedure Guide -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Preparation is Key</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Your Procedure Guide
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          Being prepared helps ensure your procedure is safe and successful. Following these guidelines will minimize the risk of complications and help you recover faster. If you have any specific medical conditions that might affect these instructions, please inform our team immediately.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        <!-- Pre-Procedure -->
+        <div class="bg-white dark:bg-slate-950 rounded-3xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center">
+              <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Before Your Procedure</h3>
+          </div>
+          <ul class="space-y-4 text-base text-slate-600 dark:text-slate-400">
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Medications:</strong> You may be asked to stop blood thinners (like aspirin, warfarin, or Plavix) several days prior to your procedure to prevent excessive bleeding. Always consult with our clinical team before making any changes to your medication regimen.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Fasting:</strong> Unless you are receiving IV sedation, you can usually eat a light meal before your procedure. If sedation is used, you must fast for at least 6 hours prior to your arrival time. Clear liquids are generally permitted up to 2 hours before.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Clothing:</strong> Wear comfortable, loose-fitting clothing that allows easy access to the treatment area. Avoid wearing jewelry or tight undergarments that may interfere with the procedure.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Transportation:</strong> If you receive sedation, you must arrange for a responsible adult to drive you home and stay with you for the first 24 hours. You will not be permitted to drive yourself or take public transportation.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Post-Procedure -->
+        <div class="bg-white dark:bg-slate-950 rounded-3xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-900/50 text-sky-600 flex items-center justify-center">
+              <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">After Your Procedure</h3>
+          </div>
+          <ul class="space-y-4 text-base text-slate-600 dark:text-slate-400">
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Rest:</strong> Take it easy for the first 24 hours following your procedure. Avoid strenuous activity, heavy lifting, or prolonged standing. Gentle walking is encouraged to prevent stiffness.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Ice/Heat:</strong> Apply ice to the injection site for 15 minutes at a time, several times a day, to reduce swelling and discomfort. Do not apply heat directly to the injection site for the first 48 hours.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Medications:</strong> Resume your normal medications unless instructed otherwise. Do not start any new pain medications without consulting our team. If you experience severe pain, contact our office immediately.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5"></i>
+              <span><strong>Follow-up:</strong> Keep your scheduled follow-up appointment. Relief may take a few days to fully take effect as the medication and local anesthetic wear off. Our team will monitor your progress and adjust your plan as needed.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Insurance Verification Tool -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-teal-900 dark:bg-teal-950 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+        
+        <div class="md:w-1/2 p-10 sm:p-12 flex flex-col justify-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Check Your Coverage</h2>
+          <p class="text-lg text-teal-100 mb-8">
+            Navigating insurance can be confusing. Enter your details below and our dedicated billing team will verify your benefits, check for prior authorization requirements, and contact you with a clear explanation of your out-of-pocket costs before your visit.
+          </p>
+          
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our billing team will verify your coverage and contact you shortly.');">
+            <div>
+              <label class="block text-sm font-bold text-teal-200 mb-1">Insurance Provider</label>
+              <select class="w-full px-4 py-3 rounded-xl bg-teal-800 border border-teal-700 text-white focus:outline-none focus:ring-2 focus:ring-teal-400">
+                <option>BlueCross BlueShield</option>
+                <option>Aetna</option>
+                <option>Cigna</option>
+                <option>UnitedHealthcare</option>
+                <option>Medicare</option>
+                <option>Other / Self-Pay</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-teal-200 mb-1">Member ID</label>
+              <input type="text" placeholder="Enter your Member ID" class="w-full px-4 py-3 rounded-xl bg-teal-800 border border-teal-700 text-white placeholder-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-400">
+            </div>
+            <button type="submit" class="w-full py-3 rounded-xl bg-white text-teal-900 font-bold text-lg hover:bg-slate-100 transition">
+              Verify Coverage
+            </button>
+          </form>
+        </div>
+
+        <div class="md:w-1/2 relative min-h-[300px]">
+          <img src="assets/pc2.avif" alt="Insurance paperwork" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-teal-900/40 mix-blend-multiply"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Patient Support Services -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        
+        <div class="lg:w-1/2 relative order-2 lg:order-1">
+          <img src="assets/pc3.avif" alt="Staff assisting patient with insurance" class="w-full h-[500px] object-cover rounded-[2rem] shadow-xl">
+          
+        </div>
+
+        <div class="lg:w-1/2 space-y-6 order-1 lg:order-2">
+          <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2 block">Beyond Medical Care</span>
+          <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
+            Comprehensive Patient <br>Support Services
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            We know that dealing with insurance, scheduling, and medical records can be stressful and time-consuming. That's why we provide a dedicated support team to handle the logistics, so you can focus entirely on your healing and recovery.
+          </p>
+          
+          <ul class="space-y-4 pt-4">
+            <li class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center flex-shrink-0 text-teal-600 dark:text-teal-400">
+                <i data-lucide="file-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Insurance Navigation</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">We verify benefits and obtain prior authorizations for procedures, handling all communication with your insurer so you don't have to.</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center flex-shrink-0 text-teal-600 dark:text-teal-400">
+                <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Flexible Scheduling</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">We offer early morning, evening, and Saturday appointments to accommodate your work schedule and minimize time away from your family.</p>
+              </div>
+            </li>
+            <li class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center flex-shrink-0 text-teal-600 dark:text-teal-400">
+                <i data-lucide="car" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Transportation Assistance</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">For patients undergoing sedation, we can help coordinate safe and reliable transportation to and from your procedure, ensuring you get home safely.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Patient Resource Library -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Educational Tools</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Patient Resource Library
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          We believe that an informed patient is an empowered patient. Explore our curated collection of guides, articles, and videos designed to help you better understand your condition and actively participate in your recovery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <a href="#" class="group rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition flex flex-col h-full">
+          <div class="h-48 overflow-hidden shrink-0">
+            <img src="assets/pc4.avif" alt="Exercise guide" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2 block">Guide</span>
+            <div class="min-h-[4.5rem] flex flex-col justify-start mb-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Post-Injection Exercise Guide</h3>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">Simple, low-impact stretches you can do at home to maintain mobility and prevent stiffness after your procedure.</p>
+          </div>
+        </a>
+
+        <a href="#" class="group rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition flex flex-col h-full">
+          <div class="h-48 overflow-hidden shrink-0">
+            <img src="assets/pc5.avif" alt="Nutrition guide" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2 block">Article</span>
+            <div class="min-h-[4.5rem] flex flex-col justify-start mb-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Anti-Inflammatory Diet for Pain</h3>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">Discover how incorporating certain foods into your diet can help reduce systemic inflammation and alleviate chronic pain.</p>
+          </div>
+        </a>
+
+        <a href="#" class="group rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition flex flex-col h-full">
+          <div class="h-48 overflow-hidden shrink-0">
+            <img src="assets/pc6.avif" alt="Ergonomics guide" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2 block">Video</span>
+            <div class="min-h-[4.5rem] flex flex-col justify-start mb-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">Office Ergonomics Setup</h3>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">A step-by-step video tutorial on how to properly set up your desk, chair, and monitor to prevent back and neck pain.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Patient Rights & Responsibilities -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white dark:bg-slate-950 rounded-3xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">Patient Rights & Responsibilities</h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">At PainRelief, we are committed to fostering a culture of transparency, dignity, and mutual respect. Understanding your rights and responsibilities helps us provide the best possible care.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+              <i data-lucide="shield" class="w-5 h-5 text-teal-600"></i>
+              <span>Your Rights</span>
+            </h3>
+            <ul class="space-y-3 text-base text-slate-600 dark:text-slate-400">
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To be treated with dignity, respect, and consideration without discrimination.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To have your questions answered clearly and to participate in decisions about your care.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To confidentiality of your medical records and personal health information (HIPAA).</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To receive information about your diagnosis, treatment options, and potential risks.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To request a copy of your medical records in a timely manner.</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+              <i data-lucide="user-check" class="w-5 h-5 text-teal-600"></i>
+              <span>Your Responsibilities</span>
+            </h3>
+            <ul class="space-y-3 text-base text-slate-600 dark:text-slate-400">
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To provide accurate and complete medical history and current medication lists.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To follow the agreed-upon treatment plan and notify us of any changes in your health.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To arrive on time for appointments and notify us at least 24 hours in advance if you need to cancel.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To treat our physicians, nurses, and administrative staff with respect and courtesy.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i data-lucide="check" class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5"></i>
+                <span>To meet your financial obligations, including co-pays and deductibles, as agreed upon.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Patient Feedback/Survey -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-slate-50 dark:bg-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+        <i data-lucide="message-square-heart" class="w-12 h-12 text-teal-600 mx-auto mb-6"></i>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
+          How Was Your Visit?
+        </h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+          Your feedback is invaluable to us. It helps us celebrate our successes and identify areas where we can improve. If you recently visited our clinic, we would love to hear about your experience. All responses are confidential and help shape the future of patient care at PainRelief.
+        </p>
+        <a href="#" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-lg shadow-md transition">
+          Take Our Patient Survey
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Patient FAQs -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
+          Patient Care FAQs
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300">Common questions about visiting our clinic, answered by our care coordinators.</p>
+      </div>
+
+      <div class="space-y-4" id="faq-accordion-container">
+        
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-white dark:bg-slate-950">
+          <button type="button" onclick="toggleFaq('faq-1')" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg text-slate-900 dark:text-white hover:text-teal-600 transition">
+            <span>What should I bring to my first appointment?</span>
+            <i data-lucide="chevron-down" id="faq-1-icon" class="w-5 h-5 text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-1" class="hidden p-6 pt-0 text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800">
+            Please bring a valid photo ID, your insurance card(s), a list of current medications (including dosages), and any relevant medical records or imaging CDs (MRI, X-ray) related to your pain condition. If you have seen other specialists for this issue, having their notes can be very helpful.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-white dark:bg-slate-950">
+          <button type="button" onclick="toggleFaq('faq-2')" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg text-slate-900 dark:text-white hover:text-teal-600 transition">
+            <span>How long will my initial consultation take?</span>
+            <i data-lucide="chevron-down" id="faq-2-icon" class="w-5 h-5 text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-2" class="hidden p-6 pt-0 text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800">
+            Your initial consultation typically lasts between 45 to 60 minutes. We reserve ample time to thoroughly review your history, perform a physical exam, and discuss your treatment options without feeling rushed. We encourage you to ask questions and take notes.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-white dark:bg-slate-950">
+          <button type="button" onclick="toggleFaq('faq-3')" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg text-slate-900 dark:text-white hover:text-teal-600 transition">
+            <span>Can I eat or drink before my procedure?</span>
+            <i data-lucide="chevron-down" id="faq-3-icon" class="w-5 h-5 text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-3" class="hidden p-6 pt-0 text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800">
+            Unless you are receiving IV sedation, you can typically eat a light meal before your procedure. If sedation is used, you must fast for at least 6 hours prior. Our clinical team will provide specific pre-procedure instructions when your appointment is scheduled, and you can always call us if you are unsure.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-white dark:bg-slate-950">
+          <button type="button" onclick="toggleFaq('faq-4')" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg text-slate-900 dark:text-white hover:text-teal-600 transition">
+            <span>Will I be able to drive myself home?</span>
+            <i data-lucide="chevron-down" id="faq-4-icon" class="w-5 h-5 text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-4" class="hidden p-6 pt-0 text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800">
+            If you are having a standard injection without sedation, you may be able to drive yourself. However, if your procedure involves sedation, or if you feel uncomfortable or drowsy afterward, we require you to arrange for a responsible adult to drive you home. Your safety is our top priority.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-white dark:bg-slate-950">
+          <button type="button" onclick="toggleFaq('faq-5')" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg text-slate-900 dark:text-white hover:text-teal-600 transition">
+            <span>Do you offer telemedicine or virtual visits?</span>
+            <i data-lucide="chevron-down" id="faq-5-icon" class="w-5 h-5 text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-5" class="hidden p-6 pt-0 text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800">
+            Yes, we offer secure telehealth appointments for follow-up visits, medication management reviews, and initial consultations for patients who are unable to travel. Please call our front desk to schedule a virtual visit. Note that certain procedures and physical examinations still require an in-person visit.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Final CTA -->
+  <section class="py-24 bg-slate-900 dark:bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+        Have More Questions?
+      </h2>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+        Our patient care coordinators are available to assist you with scheduling, insurance verification, or any other concerns you may have. We are here to make your experience as smooth as possible.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="contact.html" class="px-8 py-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-lg shadow-lg transition">
+          Contact Patient Care
+        </a>
+        <a href="tel:+15553928471" class="px-8 py-4 rounded-xl bg-slate-800 text-white font-bold text-lg border border-slate-700 hover:bg-slate-700 transition">
+          Call: (555) 392-8471
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER (Unchanged) ========== -->
+  <footer class="bg-slate-950 text-slate-300 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        
+        <div class="space-y-5">
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white">
+              <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+            </div>
+            <span class="text-2xl font-extrabold text-white">Pain<span class="text-teal-400">Relief</span></span>
+          </div>
+          <p class="text-base text-slate-400 leading-relaxed">
+            Comprehensive pain management clinic delivering advanced interventional care, medication management, and holistic relief.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-base">
+            <li><a href="index.html" class="text-slate-400 hover:text-teal-400 transition">Home</a></li>
+            <li><a href="about.html" class="text-slate-400 hover:text-teal-400 transition">About Us</a></li>
+            <li><a href="treatments.html" class="text-slate-400 hover:text-teal-400 transition">Treatments</a></li>
+            <li><a href="pain-relief.html" class="text-slate-400 hover:text-teal-400 transition">Pain Relief</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-5">Resources</h4>
+          <ul class="space-y-3 text-base">
+            <li><a href="doctors.html" class="text-slate-400 hover:text-teal-400 transition">Our Doctors</a></li>
+            <li><a href="conditions.html" class="text-slate-400 hover:text-teal-400 transition">Conditions</a></li>
+            <li><a href="patient-care.html" class="text-slate-400 hover:text-teal-400 transition">Patient Care</a></li>
+            <li><a href="recovery.html" class="text-slate-400 hover:text-teal-400 transition">Recovery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-5">Contact</h4>
+          <ul class="space-y-3 text-base text-slate-400">
+            <li>742 Evergreen Medical Pavilion</li>
+            <li>Suite 400, Boston, MA 02115</li>
+            <li>Phone: +1 (555) 392-8471</li>
+            <li>Email: info@painrelief.com</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        &copy; 2026 PainRelief Pain Management Clinic. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // --- Theme Toggle Logic ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('painrelief_theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('painrelief_theme', 'dark');
+      }
+    }
+
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+
+    // --- RTL Toggle Logic ---
+    const rtlToggleBtn = document.getElementById('rtl-toggle');
+    const mobileRtlToggleBtn = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      const html = document.documentElement;
+      if (html.getAttribute('dir') === 'rtl') {
+        html.setAttribute('dir', 'ltr');
+        localStorage.setItem('painrelief_direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('painrelief_direction', 'rtl');
+      }
+    }
+
+    if (rtlToggleBtn) rtlToggleBtn.addEventListener('click', toggleRTL);
+    if (mobileRtlToggleBtn) mobileRtlToggleBtn.addEventListener('click', toggleRTL);
+
+    // --- Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // --- FAQ Toggle ---
+    function toggleFaq(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      if (el) {
+        el.classList.toggle('hidden');
+        if (icon) {
+          icon.style.transform = el.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      }
+    }
+    // --- Active Navigation Link Handler ---
+    (function highlightActiveNav() {
+      let path = window.location.pathname.split('/').pop().split('?')[0].split('#')[0];
+      if (!path || path === '' || path === '/') {
+        path = 'index.html';
+      }
+      const normPath = path.replace(/\.html$/, '');
+
+      // 1. Desktop Navigation
+      const desktopNav = document.getElementById('desktop-nav');
+      if (desktopNav) {
+        const homeBtn = desktopNav.querySelector('.relative.group > button');
+        const isHome = normPath === 'index' || normPath === 'home-2';
+
+        if (homeBtn) {
+          if (isHome) {
+            homeBtn.className = 'flex items-center space-x-1 px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 transition';
+          } else {
+            homeBtn.className = 'flex items-center space-x-1 px-3.5 py-2 rounded-xl hover:text-teal-600 dark:hover:text-teal-400 transition';
+          }
+        }
+
+        desktopNav.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+          const linkTarget = href.split('/').pop().split('?')[0].split('#')[0];
+          const normTarget = linkTarget.replace(/\.html$/, '');
+          const isMatch = (linkTarget === path) || (normTarget === normPath);
+
+          if (link.closest('.relative.group')) {
+            // Dropdown items
+            if (isMatch) {
+              link.className = 'block px-4 py-2.5 text-sm font-semibold text-teal-700 dark:text-teal-300 bg-teal-50/70 dark:bg-teal-900/40' + (normTarget === 'index' ? ' first:rounded-t-xl' : ' last:rounded-b-xl');
+            } else {
+              link.className = 'block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700' + (normTarget === 'index' ? ' first:rounded-t-xl' : ' last:rounded-b-xl');
+            }
+          } else {
+            // Main nav links
+            if (isMatch) {
+              link.className = 'whitespace-nowrap px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 transition';
+            } else {
+              link.className = 'whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition';
+            }
+          }
+        });
+      }
+
+      // 2. Mobile Navigation
+      const mobileNav = document.querySelector('#mobile-menu nav');
+      if (mobileNav) {
+        mobileNav.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+          const linkTarget = href.split('/').pop().split('?')[0].split('#')[0];
+          const normTarget = linkTarget.replace(/\.html$/, '');
+          const isMatch = (linkTarget === path) || (normTarget === normPath);
+
+          if (isMatch) {
+            link.className = 'px-4 py-2.5 rounded-xl bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300';
+          } else {
+            link.className = 'px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

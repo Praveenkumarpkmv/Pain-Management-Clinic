@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Doctors — PainRelief | Meet Our Pain Specialists</title>
+  <meta name="description" content="Meet the board-certified pain management physicians, interventional specialists, and rehabilitation experts at PainRelief.">
+  
+  <!-- Favicon matching logo (Heart Pulse) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236E473B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/><path d='M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27'/></svg>">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FAF6F0',
+              100: '#F3ECE3',
+              200: '#E2D5C7',
+              300: '#C6B29F',
+              400: '#A78D78',
+              500: '#8A5E4F',
+              600: '#6E473B',
+              700: '#57372D',
+              800: '#432921',
+              900: '#311D17',
+              950: '#1F120E',
+            },
+            teal: {
+              50: '#FAF6F0',
+              100: '#F3ECE3',
+              200: '#E2D5C7',
+              300: '#C6B29F',
+              400: '#A78D78',
+              500: '#8A5E4F',
+              600: '#6E473B',
+              700: '#57372D',
+              800: '#432921',
+              900: '#311D17',
+              950: '#1F120E',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Prevent Theme & RTL Flash -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('painrelief_theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const dir = localStorage.getItem('painrelief_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', dir);
+    })();
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-200 overflow-x-hidden w-full max-w-full">
+
+  <!-- ========== NAVBAR (Unchanged) ========== -->
+  <header class="sticky top-0 z-50 bg-white dark:bg-[#0f172a] border-b border-slate-100 dark:border-slate-800 shadow-sm w-full">
+    <div class="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Area -->
+        <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse flex-shrink-0">
+          <div class="w-10 h-10 rounded-[12px] bg-[#6E473B] flex items-center justify-center text-white shadow-sm">
+            <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[22px] font-bold tracking-tight text-slate-900 dark:text-white">Pain<span class="text-[#6E473B] dark:text-[#A78D78]">Relief</span><span class="text-[#6E473B] dark:text-[#A78D78] ml-0.5">•</span></span>
+        </a>
+
+        <!-- Center Navigation Links -->
+        <nav id="desktop-nav" class="hidden 2xl:flex items-center space-x-5 2xl:space-x-7 rtl:space-x-reverse text-[14px] 2xl:text-[15px] font-semibold text-slate-700 dark:text-slate-200">
+          
+          <!-- Home Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3.5 py-2 rounded-xl hover:text-teal-600 dark:hover:text-teal-400 transition">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 rounded-xl bg-white dark:bg-slate-800 shadow-lg border border-slate-100 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <a href="index.html" class="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 first:rounded-t-xl">Home 1</a>
+              <a href="home-2.html" class="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 last:rounded-b-xl">Home 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">About Us</a>
+          <a href="treatments.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Treatments</a>
+          <a href="pain-relief.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Pain Relief</a>
+          <a href="doctors.html" class="whitespace-nowrap px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 transition">Our Doctors</a>
+          <a href="conditions.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Conditions</a>
+          <a href="patient-care.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Patient Care</a>
+          <a href="recovery.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Recovery</a>
+          <a href="contact.html" class="whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition">Contact</a>
+          
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="hidden 2xl:flex items-center space-x-3 rtl:space-x-reverse">
+          
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" title="Toggle RTL" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-teal-400 dark:hover:bg-slate-800 transition">
+            <i data-lucide="arrow-left-right" class="w-[18px] h-[18px]"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-teal-400 dark:hover:bg-slate-800 transition">
+            <i data-lucide="moon" class="w-[18px] h-[18px] hidden dark:block"></i>
+            <i data-lucide="sun" class="w-[18px] h-[18px] block dark:hidden"></i>
+          </button>
+
+          <!-- Book Appointment Button -->
+          <a href="contact.html" class="inline-flex items-center space-x-2 rtl:space-x-reverse px-5 py-2.5 rounded-[12px] bg-[#6E473B] hover:bg-[#57372D] text-white text-[15px] font-semibold shadow-sm transition">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" type="button" class="2xl:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Toggle navigation menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-menu" class="hidden 2xl:hidden pb-6 border-t border-slate-100 dark:border-slate-800 mt-2 pt-4">
+                        <nav class="flex flex-col space-y-1.5 text-base font-semibold">
+          <a href="index.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Home 1</a>
+          <a href="home-2.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Home 2</a>
+          <a href="about.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">About Us</a>
+          <a href="treatments.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Treatments</a>
+          <a href="pain-relief.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Pain Relief</a>
+          <a href="doctors.html" class="px-4 py-2.5 rounded-xl bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300">Our Doctors</a>
+          <a href="conditions.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Conditions</a>
+          <a href="patient-care.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Patient Care</a>
+          <a href="recovery.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Recovery</a>
+          <a href="contact.html" class="px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Contact</a>
+        </nav>
+        
+        <div class="mt-5 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-5 px-4">
+          <div class="flex space-x-3">
+            <button id="mobile-rtl-toggle" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 bg-slate-100 dark:bg-slate-800"><i data-lucide="arrow-left-right" class="w-5 h-5"></i></button>
+            <button id="mobile-theme-toggle" class="p-2 rounded-lg text-slate-500 hover:text-teal-600 bg-slate-100 dark:bg-slate-800">
+              <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+              <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+          </div>
+          <a href="contact.html" class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#6E473B] text-white text-sm font-semibold shadow-sm">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT (Our Doctors - Expanded) ========== -->
+
+  <!-- 1. Page Header / Hero -->
+  <section class="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
+    <img src="assets/d1.avif" alt="Medical team" class="absolute inset-0 w-full h-full object-cover opacity-20">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-teal-400 font-bold uppercase tracking-wider text-sm mb-4 block">Clinical Excellence</span>
+      <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-6">Meet Your<br>Pain Specialists.</h1>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Our team is comprised of board-certified physicians, interventional specialists, and rehabilitation experts dedicated to providing the highest standard of care.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Physician Grid -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Our Physicians</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Leaders in Pain Medicine
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          Each of our doctors brings years of specialized training and a commitment to compassionate, patient-centered care.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+        
+        <!-- Doctor 1 -->
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="relative h-72 rounded-2xl overflow-hidden mb-6 flex-shrink-0">
+              <img src="assets/d3.jpeg" alt="Dr. James Wilson" class="w-full h-full object-cover object-top">
+              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-sm font-bold bg-teal-600 text-white">Medical Director</span>
+            </div>
+            <div class="min-h-[3.75rem] flex flex-col justify-start mb-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dr. James Wilson, MD</h3>
+            </div>
+            <div class="min-h-[3rem] flex flex-col justify-start mb-3">
+              <p class="text-base font-semibold text-teal-600 dark:text-teal-400 leading-snug">Interventional Pain Specialist</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[5.5rem] flex-grow mb-6">
+              Board-certified anesthesiologist specializing in complex spinal interventions, spinal cord stimulation, and radiofrequency ablation.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-bold text-amber-500 flex items-center space-x-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <span>4.9 (250+ reviews)</span>
+            </span>
+            <a href="contact.html" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold transition">Book Visit</a>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="relative h-72 rounded-2xl overflow-hidden mb-6 flex-shrink-0">
+              <img src="assets/d2.jpeg" alt="Dr. Sarah Chen" class="w-full h-full object-cover object-top">
+              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-sm font-bold bg-teal-700 text-white">Regenerative Med</span>
+            </div>
+            <div class="min-h-[3.75rem] flex flex-col justify-start mb-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dr. Sarah Chen, DO</h3>
+            </div>
+            <div class="min-h-[3rem] flex flex-col justify-start mb-3">
+              <p class="text-base font-semibold text-teal-600 dark:text-teal-400 leading-snug">Regenerative Medicine Specialist</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[5.5rem] flex-grow mb-6">
+              Pioneering the use of PRP and stem cell therapies for joint preservation, tendon repair, and accelerated tissue healing.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-bold text-amber-500 flex items-center space-x-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <span>5.0 (180+ reviews)</span>
+            </span>
+            <a href="contact.html" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold transition">Book Visit</a>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="relative h-72 rounded-2xl overflow-hidden mb-6 flex-shrink-0">
+              <img src="assets/d4.jpeg" alt="Dr. Robert Davis" class="w-full h-full object-cover object-top">
+              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-sm font-bold bg-teal-600 text-white">Pain Psychology</span>
+            </div>
+            <div class="min-h-[3.75rem] flex flex-col justify-start mb-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dr. Robert Davis, PhD</h3>
+            </div>
+            <div class="min-h-[3rem] flex flex-col justify-start mb-3">
+              <p class="text-base font-semibold text-teal-600 dark:text-teal-400 leading-snug">Head of Pain Psychology</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[5.5rem] flex-grow mb-6">
+              Specializes in cognitive behavioral therapy for chronic pain, helping patients break the cycle of pain, anxiety, and sleep disturbance.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-bold text-amber-500 flex items-center space-x-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <span>4.8 (210+ reviews)</span>
+            </span>
+            <a href="contact.html" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold transition">Book Visit</a>
+          </div>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="relative h-72 rounded-2xl overflow-hidden mb-6 flex-shrink-0">
+              <img src="assets/d5.jpeg" alt="Dr. Michael Chang" class="w-full h-full object-cover object-top">
+              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-sm font-bold bg-teal-700 text-white">Neurology</span>
+            </div>
+            <div class="min-h-[3.75rem] flex flex-col justify-start mb-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dr. Michael Chang, MD</h3>
+            </div>
+            <div class="min-h-[3rem] flex flex-col justify-start mb-3">
+              <p class="text-base font-semibold text-teal-600 dark:text-teal-400 leading-snug">Neuropathic Pain Specialist</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[5.5rem] flex-grow mb-6">
+              Focuses on complex neuropathic conditions, migraines, and post-herpetic neuralgia using advanced nerve blocks and neuromodulation.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-bold text-amber-500 flex items-center space-x-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <span>4.9 (190+ reviews)</span>
+            </span>
+            <a href="contact.html" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold transition">Book Visit</a>
+          </div>
+        </div>
+
+        <!-- Doctor 5 -->
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="relative h-72 rounded-2xl overflow-hidden mb-6 flex-shrink-0">
+              <img src="assets/d6.jpeg" alt="Dr. Emily Carter" class="w-full h-full object-cover object-top">
+              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-sm font-bold bg-teal-600 text-white">Rehabilitation</span>
+            </div>
+            <div class="min-h-[3.75rem] flex flex-col justify-start mb-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dr. Emily Carter, PT, DPT</h3>
+            </div>
+            <div class="min-h-[3rem] flex flex-col justify-start mb-3">
+              <p class="text-base font-semibold text-teal-600 dark:text-teal-400 leading-snug">Director of Physical Therapy</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[5.5rem] flex-grow mb-6">
+              Leads our rehabilitation team, integrating manual therapy, corrective exercise, and functional movement training for recovery.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-bold text-amber-500 flex items-center space-x-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <span>4.9 (160+ reviews)</span>
+            </span>
+            <a href="contact.html" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold transition">Book Visit</a>
+          </div>
+        </div>
+
+        <!-- Doctor 6 -->
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="relative h-72 rounded-2xl overflow-hidden mb-6 flex-shrink-0">
+              <img src="assets/d7.jpeg" alt="Dr. David Kim" class="w-full h-full object-cover object-top">
+              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-sm font-bold bg-teal-700 text-white">Anesthesiology</span>
+            </div>
+            <div class="min-h-[3.75rem] flex flex-col justify-start mb-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dr. David Kim, MD</h3>
+            </div>
+            <div class="min-h-[3rem] flex flex-col justify-start mb-3">
+              <p class="text-base font-semibold text-teal-600 dark:text-teal-400 leading-snug">Interventional Pain Physician</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[5.5rem] flex-grow mb-6">
+              Expert in image-guided joint injections, sympathetic blocks, and perioperative pain management for complex surgical cases.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-bold text-amber-500 flex items-center space-x-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <span>4.8 (140+ reviews)</span>
+            </span>
+            <a href="contact.html" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold transition">Book Visit</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. "Day in the Life" Feature (NEW) -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div class="order-2 lg:order-1 relative">
+          <div class="absolute -inset-4 bg-teal-100 dark:bg-teal-900/30 rounded-[2rem] transform rotate-3"></div>
+          <img src="assets/d8.avif" alt="Doctor interacting with patient" class="relative rounded-[2rem] shadow-xl object-cover w-full h-[500px]">
+        </div>
+
+        <div class="order-1 lg:order-2 space-y-6">
+          <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
+            A Day in the Life at PainRelief
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Our physicians don't just perform procedures; they immerse themselves in the diagnostic process and the long-term recovery of every patient. A typical day involves a blend of clinical consultations, complex interventional procedures, and multidisciplinary team rounds.
+          </p>
+          
+          <div class="space-y-6 pt-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center flex-shrink-0 font-bold text-lg">8a</div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Morning Rounds & Consults</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">Reviewing overnight patient reports and conducting new patient evaluations for complex pain syndromes.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center flex-shrink-0 font-bold text-lg">11a</div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Interventional Suite</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">Performing image-guided procedures such as epidural injections and nerve blocks in our sterile suites.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center flex-shrink-0 font-bold text-lg">2p</div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Multidisciplinary Rounds</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">Collaborating with physical therapists and psychologists to adjust comprehensive care plans.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Nursing & Support Staff Section -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div class="space-y-6">
+          <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2 block">The Backbone of Our Care</span>
+          <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
+            Dedicated Nursing & <br>Support Staff
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            While our physicians lead the clinical strategy, our exceptional nursing and administrative teams ensure your experience is seamless, comfortable, and safe. From the moment you schedule your appointment to your post-procedure follow-up, you are supported by a team that genuinely cares.
+          </p>
+          
+          <div class="space-y-4 pt-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center flex-shrink-0 text-teal-600 dark:text-teal-400">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Pre & Post-Op Care</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">Our registered nurses provide compassionate monitoring and education before, during, and after every procedure.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center flex-shrink-0 text-teal-600 dark:text-teal-400">
+                <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Care Coordination</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">Dedicated patient navigators help schedule appointments, manage insurance authorizations, and coordinate referrals.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center flex-shrink-0 text-teal-600 dark:text-teal-400">
+                <i data-lucide="thermometer" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white">Clinical Technicians</h4>
+                <p class="text-base text-slate-600 dark:text-slate-400 mt-1">Our radiology and procedure technicians are highly trained in advanced imaging and sterile technique.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-4 bg-teal-100 dark:bg-teal-900/30 rounded-[2rem] transform rotate-2"></div>
+          <img src="assets/d9.avif" alt="Nursing staff caring for patient" class="relative rounded-[2rem] shadow-xl object-cover w-full h-[500px]">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How We Hire / Our Standards -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Our Standards</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          What Sets Our Team Apart
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          We don't just hire for credentials; we hire for character. Every member of our team is vetted against rigorous clinical and compassionate care standards.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center">
+          <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="award" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Top-Tier Credentials</h3>
+          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Our physicians are board-certified and have completed fellowships at leading academic medical centers.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center">
+          <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="book-open" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Continuous Education</h3>
+          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Medicine evolves, and so do we. Our team participates in ongoing CME (Continuing Medical Education) to stay at the forefront of pain management.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center">
+          <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="hand-heart" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Compassionate Care</h3>
+          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Every member of our staff is trained in empathetic communication and patient-centered care, ensuring you feel heard at every step.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Research & Publications (NEW) -->
+  <section class="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Advancing the Field</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Research & Publications
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          Our physicians are not only clinicians but also active researchers, contributing to the scientific literature on pain management.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-teal-600 dark:text-teal-400 mb-4"><i data-lucide="file-text" class="w-8 h-8"></i></div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Neuromodulation Efficacy</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Published in the <em>Journal of Pain Research</em>, 2024.</p>
+          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            A 5-year retrospective study on the long-term outcomes of spinal cord stimulation for failed back surgery syndrome.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-teal-600 dark:text-teal-400 mb-4"><i data-lucide="file-text" class="w-8 h-8"></i></div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">PRP for Joint Preservation</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Presented at the <em>American Academy of Pain Medicine</em>, 2023.</p>
+          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Investigating the role of platelet-rich plasma in delaying the need for total knee arthroplasty in osteoarthritis patients.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-teal-600 dark:text-teal-400 mb-4"><i data-lucide="file-text" class="w-8 h-8"></i></div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Opioid-Sparing Protocols</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Published in <em>Pain Medicine Journal</em>, 2022.</p>
+          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            A clinical trial evaluating the effectiveness of early interventional therapy in reducing opioid dependence in chronic pain patients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Patient Testimonials -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3 block">Patient Stories</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+          What Our Patients Say
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <div class="bg-white dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-center space-x-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+            </div>
+            <p class="text-base text-slate-600 dark:text-slate-400 italic leading-relaxed mb-6">
+              "Dr. Wilson took the time to actually listen. I've been to so many doctors who just handed me a prescription. After my spinal cord stimulator, I'm off all pain meds."
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
+            <img src="assets/d11.avif" alt="Patient" class="w-11 h-11 rounded-full object-cover shrink-0">
+            <div class="min-h-[2.5rem] flex flex-col justify-center">
+              <p class="text-sm font-bold text-slate-900 dark:text-white leading-tight">Mark S.</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-tight">Chronic Back Pain</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-center space-x-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+            </div>
+            <p class="text-base text-slate-600 dark:text-slate-400 italic leading-relaxed mb-6">
+              "The nursing staff is incredible. I was so nervous for my injection, but they held my hand and explained every step. The relief was almost immediate."
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
+            <img src="assets/d12.avif" alt="Patient" class="w-11 h-11 rounded-full object-cover shrink-0">
+            <div class="min-h-[2.5rem] flex flex-col justify-center">
+              <p class="text-sm font-bold text-slate-900 dark:text-white leading-tight">Linda R.</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-tight">Migraine Patient</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-center space-x-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+            </div>
+            <p class="text-base text-slate-600 dark:text-slate-400 italic leading-relaxed mb-6">
+              "Dr. Chen's regenerative therapy saved my knee. I was told I needed a replacement at 45. Two years later, I'm hiking again. Life-changing."
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
+            <img src="assets/d13.avif" alt="Patient" class="w-11 h-11 rounded-full object-cover shrink-0">
+            <div class="min-h-[2.5rem] flex flex-col justify-center">
+              <p class="text-sm font-bold text-slate-900 dark:text-white leading-tight">James H.</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-tight">Knee Osteoarthritis</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Community Outreach (NEW) -->
+  <section class="py-24 bg-white dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2">
+          <img src="assets/d10.avif" alt="Doctors volunteering" class="w-full h-[400px] object-cover rounded-3xl shadow-lg">
+        </div>
+        <div class="lg:w-1/2 space-y-6">
+          <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white">Giving Back to Our Community</h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            We believe that excellent healthcare should be accessible. Our team regularly volunteers at local free clinics, hosts educational workshops on pain prevention, and provides free ergonomic screenings for local schools and businesses.
+          </p>
+          <div class="flex space-x-4 pt-4">
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex-1 text-center">
+              <i data-lucide="users" class="w-8 h-8 text-teal-600 mx-auto mb-3"></i>
+              <p class="text-2xl font-extrabold text-slate-900 dark:text-white">2,500+</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Free Screenings</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex-1 text-center">
+              <i data-lucide="presentation" class="w-8 h-8 text-teal-600 mx-auto mb-3"></i>
+              <p class="text-2xl font-extrabold text-slate-900 dark:text-white">40+</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Workshops Hosted</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Join Our Team / Careers CTA -->
+  <section class="py-24 bg-teal-900 dark:bg-teal-950">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <i data-lucide="briefcase" class="w-12 h-12 text-teal-400 mx-auto mb-6 opacity-80"></i>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+        Join Our Growing Team
+      </h2>
+      <p class="text-xl text-teal-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+        We are always looking for talented, compassionate physicians, nurses, and therapists to join our mission. If you are passionate about advancing pain care, we would love to hear from you.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#" class="px-8 py-4 rounded-xl bg-white text-teal-900 font-bold text-lg shadow-lg hover:bg-slate-50 transition">
+          View Open Positions
+        </a>
+        <a href="contact.html" class="px-8 py-4 rounded-xl bg-teal-800 text-white font-bold text-lg border border-teal-700 hover:bg-teal-700 transition">
+          Contact HR Department
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER (Unchanged) ========== -->
+  <footer class="bg-slate-950 text-slate-300 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        
+        <div class="space-y-5">
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white">
+              <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+            </div>
+            <span class="text-2xl font-extrabold text-white">Pain<span class="text-teal-400">Relief</span></span>
+          </div>
+          <p class="text-base text-slate-400 leading-relaxed">
+            Comprehensive pain management clinic delivering advanced interventional care, medication management, and holistic relief.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-base">
+            <li><a href="index.html" class="text-slate-400 hover:text-teal-400 transition">Home</a></li>
+            <li><a href="about.html" class="text-slate-400 hover:text-teal-400 transition">About Us</a></li>
+            <li><a href="treatments.html" class="text-slate-400 hover:text-teal-400 transition">Treatments</a></li>
+            <li><a href="pain-relief.html" class="text-slate-400 hover:text-teal-400 transition">Pain Relief</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-5">Resources</h4>
+          <ul class="space-y-3 text-base">
+            <li><a href="doctors.html" class="text-slate-400 hover:text-teal-400 transition">Our Doctors</a></li>
+            <li><a href="conditions.html" class="text-slate-400 hover:text-teal-400 transition">Conditions</a></li>
+            <li><a href="patient-care.html" class="text-slate-400 hover:text-teal-400 transition">Patient Care</a></li>
+            <li><a href="recovery.html" class="text-slate-400 hover:text-teal-400 transition">Recovery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-5">Contact</h4>
+          <ul class="space-y-3 text-base text-slate-400">
+            <li>742 Evergreen Medical Pavilion</li>
+            <li>Suite 400, Boston, MA 02115</li>
+            <li>Phone: +1 (555) 392-8471</li>
+            <li>Email: info@painrelief.com</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        &copy; 2026 PainRelief Pain Management Clinic. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // --- Theme Toggle Logic ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('painrelief_theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('painrelief_theme', 'dark');
+      }
+    }
+
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+
+    // --- RTL Toggle Logic ---
+    const rtlToggleBtn = document.getElementById('rtl-toggle');
+    const mobileRtlToggleBtn = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      const html = document.documentElement;
+      if (html.getAttribute('dir') === 'rtl') {
+        html.setAttribute('dir', 'ltr');
+        localStorage.setItem('painrelief_direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('painrelief_direction', 'rtl');
+      }
+    }
+
+    if (rtlToggleBtn) rtlToggleBtn.addEventListener('click', toggleRTL);
+    if (mobileRtlToggleBtn) mobileRtlToggleBtn.addEventListener('click', toggleRTL);
+
+    // --- Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    // --- Active Navigation Link Handler ---
+    (function highlightActiveNav() {
+      let path = window.location.pathname.split('/').pop().split('?')[0].split('#')[0];
+      if (!path || path === '' || path === '/') {
+        path = 'index.html';
+      }
+      const normPath = path.replace(/\.html$/, '');
+
+      // 1. Desktop Navigation
+      const desktopNav = document.getElementById('desktop-nav');
+      if (desktopNav) {
+        const homeBtn = desktopNav.querySelector('.relative.group > button');
+        const isHome = normPath === 'index' || normPath === 'home-2';
+
+        if (homeBtn) {
+          if (isHome) {
+            homeBtn.className = 'flex items-center space-x-1 px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 transition';
+          } else {
+            homeBtn.className = 'flex items-center space-x-1 px-3.5 py-2 rounded-xl hover:text-teal-600 dark:hover:text-teal-400 transition';
+          }
+        }
+
+        desktopNav.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+          const linkTarget = href.split('/').pop().split('?')[0].split('#')[0];
+          const normTarget = linkTarget.replace(/\.html$/, '');
+          const isMatch = (linkTarget === path) || (normTarget === normPath);
+
+          if (link.closest('.relative.group')) {
+            // Dropdown items
+            if (isMatch) {
+              link.className = 'block px-4 py-2.5 text-sm font-semibold text-teal-700 dark:text-teal-300 bg-teal-50/70 dark:bg-teal-900/40' + (normTarget === 'index' ? ' first:rounded-t-xl' : ' last:rounded-b-xl');
+            } else {
+              link.className = 'block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700' + (normTarget === 'index' ? ' first:rounded-t-xl' : ' last:rounded-b-xl');
+            }
+          } else {
+            // Main nav links
+            if (isMatch) {
+              link.className = 'whitespace-nowrap px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 transition';
+            } else {
+              link.className = 'whitespace-nowrap hover:text-teal-600 dark:hover:text-teal-400 transition';
+            }
+          }
+        });
+      }
+
+      // 2. Mobile Navigation
+      const mobileNav = document.querySelector('#mobile-menu nav');
+      if (mobileNav) {
+        mobileNav.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+          const linkTarget = href.split('/').pop().split('?')[0].split('#')[0];
+          const normTarget = linkTarget.replace(/\.html$/, '');
+          const isMatch = (linkTarget === path) || (normTarget === normPath);
+
+          if (isMatch) {
+            link.className = 'px-4 py-2.5 rounded-xl bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300';
+          } else {
+            link.className = 'px-4 py-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
